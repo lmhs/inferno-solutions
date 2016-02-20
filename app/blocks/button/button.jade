@@ -1,0 +1,43 @@
+mixin button(args)
+	if args
+		case args.type
+			when 'button'
+				button(type='button').btn&attributes(attributes)
+					block
+			when 'buttonSubmit'
+				button(type='submit').btn&attributes(attributes)
+					block
+			when 'input'
+				input.btn(type='button',value=args.name)&attributes(attributes)
+			when 'submit'
+				input.btn(type='submit',value=args.name)&attributes(attributes)
+			default
+				a.btn(href= jv0, role='button')&attributes(attributes)
+					block
+	else
+		a.btn(href= jv0, role='button')&attributes(attributes)
+			block
+
+mixin buttonWithMenu(args)
+	.btn--with-menu.js-btn-with-menu
+		a(href=jv0).btn-lg
+			| Лополнить !{''}
+			strong Баланс
+		span.btn-menu-toggle.js-btn-toggle-menu
+			| ...
+			.btn__menu.js-btn-menu
+				ul
+					li
+						a(href=jv0).btn__menu__link Отсрочить платеж
+					li
+						a(href=jv0).btn__menu__link Перевести средства
+
+
+mixin buttonYellow(args)
+	+button({
+						'type':'buttonSubmit'
+						}).btn--yellow
+		if (args.strong)
+			strong !{args.strong}
+		if (args.span)
+			|  !{args.span}

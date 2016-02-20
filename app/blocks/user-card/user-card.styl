@@ -1,0 +1,63 @@
+.user-card
+	display inline-block
+	height 40px
+	line-height 30px
+	padding 5px
+	position relative
+	font-family openSans
+	&--is-admin
+		background-color orange
+	&--is-gplus
+		background-color #cb3736
+	&--is-email
+		background-color #231F20
+	&--is-twitter
+		background-color #3D95D2
+	&--is-vk
+		background-color #4C75A3
+	&--is-fb
+		background-color #4D70A8
+
+	&__avatar
+		width 30px
+		height 30px
+		float left
+
+	&__name
+		font-weight bold
+		color #fff
+		font-size 14px
+		padding-x 7px
+		.user-card--is-admin &
+			color #333
+			margin-right 90px
+
+	&__admin
+		position absolute
+		right 0
+		top 0
+		bottom 0
+		background-color #231F20
+		font-size 14px
+		font-weight bold
+		line-height 40px
+		// TODO whitney book
+		color rgba(255, 255, 255, .5)
+		text-decoration none
+		padding-x 10px
+		&:before
+			content ''
+			position absolute
+			left -20px
+			top 0
+			width 0
+			height 0
+			border-style solid
+			border-width 0 0 40px 20px
+			border-color transparent transparent #231f20 transparent
+			-webkit-transform rotate(360deg)
+
+		.user-card:hover &
+			color #FFF
+
+

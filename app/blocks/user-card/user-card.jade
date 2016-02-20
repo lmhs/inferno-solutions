@@ -1,0 +1,7 @@
+mixin user-card(user)
+	+b('span')(class='user-card user-card--is-' + user.type)
+		+e('img')(src="http://dummyimage.com/30x30/4d494d/686a82.gif&text=placeholder+image", width='30', height='30', alt="placeholder+image").avatar
+		+e('span').name !{user.name}
+		if user.type === 'admin'
+			+e('a')(href=jv0).admin
+				| Admin

@@ -1,0 +1,8 @@
+mixin check-section()
+	+b('a')(href=jv0).check-section.js-check-section&attributes(attributes)
+		+e('span').caption Windows
+		+e('span').icon.js-check-section-icon
+			+icon('yellow-checkmark').check-icon
+
+mixin check-section-small()
+	+check-section().check-section--is-small

@@ -1,0 +1,141 @@
+.field-wrap
+	position relative
+	// margin-y 20px
+	&--is-invalid
+		.field
+			border-bottom-color red
+
+
+.input
+	height 40px
+	padding-x 12px
+	width 100%
+
+.textarea
+	height 120px
+	padding 12px 12px
+
+.field
+	background-color rgba(51, 51, 51, 0.05)
+	border none
+	border-bottom 1px solid #231f20
+	font-size 16px
+	line-height 20px
+	color #333
+	width 100%
+	font-family whitney
+	font-weight normal
+	&:focus
+		background-color rgba(51, 51, 51, 0.1)
+		outline none
+		& + .label
+			transform translate3d(-46px, -30px, 0) scale(.75)
+
+			color #8B7B7F
+			visibility visible
+
+	&--is-filled
+		& + .label
+			transform translate3d(-46px, -30px, 0) scale(.75)
+			visibility hidden
+
+	&.placeholder
+		color #999
+		font-size 16px
+	&::placeholder
+		color #999
+		font-size 16px
+
+	&--is-search
+		background-color #FFF
+
+	&[disabled='true']
+		color #999
+		border-color #CCC
+
+.field-icon
+	position absolute
+	top 13px
+	right 13px
+	font-size 12px
+	font-weight medium
+	text-transform uppercase
+	display inline-block
+	user-select none
+	font-family whitney
+	&--good
+		top 16px
+		font-size 10px
+		color #369946
+	&--bad
+		top 16px
+		font-size 10px
+		color red
+	&--tooltip
+		font-weight normal
+		color #369
+		right 16px
+		.field-wrap--is-invalid &
+			color red
+	&:before
+		position absolute
+		top 0
+		right -16px
+		width 60px
+		height 40px
+	&:hover
+		&:before
+			content ''
+		& + .field-tooltip
+			display block
+
+.field-tooltip
+	background-color rgba(35, 31, 32, .9)
+	font-family openSans
+	color #FFF
+	font-weight regular
+	font-size 13px
+	line-height 15px
+	padding 17px 72px 17px 17px
+	position absolute
+	display none
+	top 45px
+	z-index 1
+	&:hover
+		display block
+	&:after
+		content ''
+		width 0
+		height 0
+		border-style solid
+		border-width 10px 0 0 10px
+		border-color transparent transparent transparent  rgba(35, 31, 32, .9)
+		position absolute
+		top -10px
+		right 18px
+
+	&__help
+		position absolute
+		top 16px
+		right 16px
+		color #8B7B7F
+		text-decoration none
+		&:hover
+			color #fff
+
+.label
+	color #999
+	font-size 16px
+	position absolute
+	left 0
+	top 0
+	width 100%
+	overflow hidden
+	min-height 40px
+	padding-x 12px
+	cursor text
+	line-height 40px
+	user-select none
+	-webkit-touch-callout none
+	pointer-events none
+	transition transform 0.3s

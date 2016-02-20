@@ -1,0 +1,11 @@
+include /blocks/center/center
+include /blocks/login/login
+
+extends /blocks/layout-empty/layout-empty
+
+block head
+	- var pageTitle = 'CSSSR Project Template';
+
+block content
+	+center()
+		+login()

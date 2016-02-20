@@ -1,0 +1,83 @@
+.checkbox
+	font-size 0
+
+.checkbox-element
+	// display inline-block
+	// vertical-align top
+
+	visibility hidden
+	border none
+
+	appearance none
+	width 20px
+	height 20px
+
+	position relative
+
+	&:checked
+		& + label
+			&:before
+				background-color rgb(35, 31, 32)
+				box-shadow inset 0px 10px 0px 0px rgba(255, 255, 255, 0.05)
+
+			&:after
+				top 4px
+				left 5px
+				border-radius 0
+
+
+				transform rotate(-45deg)
+				border-bottom 2px solid #ffc21d
+				border-left 2px solid #ffc21d
+				background none
+				opacity 1
+
+				width 10px
+				height 7px
+
+input[type='checkbox'].checkbox-element
+	margin-left -20px
+	top 0
+	margin-top 0
+
+.checkbox-label
+	font-size 16px
+	padding-left 25px
+	min-height 20px
+	line-height 20px
+	position relative
+	display inline-block
+
+	&:before
+		visibility visible
+		position absolute
+		top 0
+		left 0
+		width 20px
+		height 20px
+		content ''
+		background-color rgba(35, 31, 32, 0.1)
+		box-shadow inset 0px 10px 0px 0px rgba(255, 255, 255, 0.05)
+
+		cursor pointer
+		+below(4)
+			border-radius 0
+
+	&:after
+		position absolute
+
+
+		content ''
+		cursor pointer
+
+		border-radius 50%
+		border 0
+		background-color rgb(35, 31, 32)
+		opacity 0.1
+		position absolute
+		left 8px
+		top 8px
+		width 4px
+		height 4px
+		transition border .1s
+

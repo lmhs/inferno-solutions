@@ -1,0 +1,167 @@
+.btn
+	position relative
+
+	display inline-block
+	overflow visible
+
+
+	text-align center
+
+	margin 0
+	padding 0
+	cursor pointer
+
+	user-select none
+
+	vertical-align middle
+	text-decoration none
+
+	border 0
+	color #ffffff
+
+	font-family robotoCond
+	&
+	&:after
+		transition color 0.2s ease-out
+
+	&:focus
+	&:active
+		outline-style none
+
+	&:hover
+		transition color 0s
+		text-decoration none
+
+.btn--with-menu
+	position relative
+	font-size 0
+	display inline-block
+
+.btn--yellow
+	padding-left 12px
+	padding-right 20px
+	font-weight normal
+	font-family whitney
+	text-transform uppercase
+	retinaSprite $btn_yellow_bg_group
+	width auto
+	background-repeat repeat-x
+	position relative
+	display inline-block
+	vertical-align top
+	text-decoration none
+	color #333
+	strong
+		font-weight semibold
+	&:hover
+		retinaSprite $btn_yellow_bg_hover_group
+		width auto
+		background-repeat repeat-x
+		&:after
+			retinaSprite $btn_yellow_end_hover_group
+
+	&:after
+		content ''
+		retinaSprite $btn_yellow_end_group
+		position absolute
+		top 0
+		right -11px
+
+
+.btn-lg
+	height 40px
+	line-height 40px
+	padding-left 10px
+	padding-right 30px
+	text-transform uppercase
+	font-size 16px
+	font-weight normal
+	font-family whitney
+	background-color rgb(255, 194, 29)
+	box-shadow inset 0px 20px 0px 0px rgba(255, 255, 255, 0.15)
+	position relative
+	display inline-block
+	vertical-align top
+	text-decoration none
+	color #333
+	strong
+		font-weight semibold
+	&:hover
+		background-color #FFD037
+	&:after
+		content ''
+		width 0
+		height 0
+		border-style solid
+		border-width 10px 5px 0 5px
+		border-color rgba(255, 255, 255, 0.15) transparent transparent transparent
+		position absolute
+		top 20px
+		right 0
+
+.btn-menu-toggle
+	background-color rgb(225, 225, 225)
+	box-shadow inset 0px 20px 0px 0px rgba(255, 255, 255, 0.15)
+	height 40px
+	line-height 28px
+	padding-left 14px
+	padding-right 16px
+	display inline-block
+	vertical-align top
+	color #231F20
+	text-decoration none
+	cursor pointer
+	// TODO whitney
+	font-size 20px
+	&:hover
+		background-color rgb(183, 182, 182)
+		&:before
+			border-color transparent #c2c1c1 transparent transparent
+		&:after
+			border-color transparent transparent #b7b6b6 transparent
+
+	&:before
+		content ''
+		width 0
+		height 0
+		border-style solid
+		border-width 0 11px 21px 0
+		border-color transparent #e5e5e5 transparent transparent
+		position absolute
+		right 45px
+		top 0
+
+	&:after
+		content ''
+		width 0
+		height 0
+		border-style solid
+		border-width 0 0 21px 11px
+		border-color transparent transparent #e1e1e1 transparent
+		position absolute
+		right 45px
+		bottom 0
+
+.btn__menu
+	display none
+	font-size 16px
+	position absolute
+	top 40px
+	left 0
+	min-width 156px
+	width 100%
+	padding 20px
+	border 1px solid rgb(204, 204, 204)
+	background-color rgb(255, 255, 255)
+	box-shadow 0px 2px 3px 0px rgba(51, 51, 51, 0.15)
+	&--is-opened
+		display block
+	li + li
+		margin-top 14px
+	&__link
+		color #333
+		// TODO whitney book
+		text-decoration none
+		display inline-block
+		&:hover
+			color #369

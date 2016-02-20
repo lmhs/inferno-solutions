@@ -1,0 +1,13 @@
+mixin progress()
+	+b().progress&attributes(attributes)
+		+e('progress')(max='100', value='80').element
+		+e().caption
+			+e('span').status
+				| Идет сканирование антивирусом&nbsp;&mdash; !{''}
+				span.js-progress-value 45%
+			+e().links
+				+e('a')(href=jv0).cancel-link.js-cancel
+					| Отмена
+				+e('span').divider /
+				+e('a')(href=jv0).report-link.link.js-report
+					| Отчёт

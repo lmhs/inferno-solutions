@@ -1,0 +1,29 @@
+include ../form/form
+include ../field/field
+include ../button/button
+
+mixin login()
+	+form.form--login
+		+e.inner
+			+e.head
+				+e('h2').heading Вход
+			+e.body
+				+e.row
+					+input({
+						type : 'email',
+						caption : 'tooltip',
+						id : 'input-email',
+						placeholder : 'Email'
+					})
+				+e.row
+					+input({
+						type : 'password',
+						id : 'input-password',
+						placeholder : 'Пароль'
+					})
+				+e.row
+					+buttonYellow({strong: 'Войти', span: 'в систему'})
+					a(href='/registration.html').link.form__link.form__link--right Регистрация
+		+e.foot
+			a(href=jv0).link.form__link.form__foot__link Как зарегистрироваться?
+

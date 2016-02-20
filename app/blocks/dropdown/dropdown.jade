@@ -1,0 +1,14 @@
+mixin dropdown(args, items)
+	+e.dropdown&attributes(attributes)
+		+e.dropdown-main
+			+e('span').dropdown-active !{items}
+		+e.dropdown-items
+			+e('ul').dropdown-list
+				each item in items
+					+e('li').dropdown-list-item
+						+e('a')(href=jv0).dropdown-list-link
+							| !{item}
+
+
+
+

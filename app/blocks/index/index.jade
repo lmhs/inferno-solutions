@@ -4,41 +4,83 @@ include ../subtitle/subtitle
 include ../heading/heading
 include ../list/list
 include ../col/col
-include ../arrow/arrow
-include ../fork/fork
-include ../tree/tree
+
+include ../checkbox/checkbox
+include ../progress/progress
+include ../field/field
+include ../button/button
+
+include ../user-card/user-card
+
+include ../check-section/check-section
 
 mixin index()
 	+b.index
 		+content()
-			.index__group
-				+subtitle()
-					| ЧТО В КОРОБКЕ
 
-			+heading()
-				| Инструменты
+			+checkbox({
+							name : 'check',
+							id : 'check',
+							value : 'check'
+							})
+				| check
 
-			.index__group
-				+list(getData('tools'))
+			+progress()
+			-var users = getData('user')
+			each user in users
+				+user-card(user)
 
-			.index__group
-				+subtitle()
-					| СТРУКТУРА ФАЙЛОВ
+			+check-section()
+			+check-section-small()
 
-			+container()
-				+col()
-					+heading()
-						| Исходники
-					+tree(getData('source-tree'))
 
-				+col()
-					.index__arrow
-						+arrow()
-							| Сборка
+			+input({
+				type : 'search',
+				id : 'search',
+				placeholder : 'Поиск по базе данных'
+			})
 
-				+col()
-					+heading()
-						| Готовые файлы
-					+tree(getData('build-tree'))
+			+input({
+				type : 'password',
+				id : 'password',
+				placeholder : 'Пароль'
+			})
 
-			+fork()
+			+input({
+				type : 'password',
+				caption : 'good',
+				id : 'password-good',
+				placeholder : 'Хороший пароль'
+			})
+
+			+input({
+				type : 'password',
+				id : 'password-bad',
+				caption : 'bad',
+				placeholder : 'Плохой пароль'
+			})
+
+
+			+input({
+				type : 'text',
+				caption : 'tooltip',
+				id : 'input-tooltip',
+				placeholder : 'input with tooltip'
+			})
+
+			+input({
+				type : 'text',
+				disabled : 'true',
+				id : 'input-locked',
+				placeholder : 'disabled input'
+			})
+
+			+input({
+				type : 'text',
+				id : 'input-mistake',
+				caption : 'tooltip',
+				invalid : true,
+				placeholder : 'Заполненное поле с ошибкой'
+			})
+
+			+buttonWithMenu()

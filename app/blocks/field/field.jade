@@ -1,0 +1,53 @@
+mixin field-wrap()
+	+e.field-wrap.field-wrap&attributes(attributes)
+		block
+
+mixin input(args)
+	+field-wrap()(class = args.invalid ? 'field-wrap--is-invalid' : '')&attributes(attributes)
+		+e('input').input.input.field(
+				type = args.type ? args.type : 'text',
+				name = args.name ? args.name : undefined,
+				value = args.value ? args.value : undefined,
+				step = args.step ? args.step : undefined,
+				id = args.id ? args.id : undefined,
+				min = args.min ? args.min : undefined,
+				disabled = args.disabled,
+				autocomplete = 'off',
+				max = args.max ? args.max : undefined,
+				class = (args.type === 'search') ? 'field--is-search' : '')
+		if (args.placeholder)
+			+e('label')(for = args.id ? args.id : undefined).label.label
+				| !{args.placeholder}
+		if (args.disabled)
+			+e('span').field-icon.field-icon
+				//- +icon('disabled-icon')
+		case (args.caption)
+			when 'tooltip'
+				+e('span').field-icon.field-icon.field-icon--tooltip
+					| [ ? ]
+				+e().field-tooltip.field-tooltip
+					| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
+					a(href=jv0).field-tooltip__help Справка
+			when 'good'
+				+e('span').field-icon.field-icon.field-icon--good
+					| хороший
+			when 'bad'
+				+e('span').field-icon.field-icon.field-icon--bad
+					| плохой
+				+e().field-tooltip.field-tooltip
+					| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
+					a(href=jv0).field-tooltip__help Справка
+
+
+
+
+mixin textarea(args)
+	- args.name ? label= args.name : ''
+	+field-wrap()&attributes(attributes)
+		+e('textarea')(name = args.description ? args.description : undefined,
+										required,
+										id = args.id ? args.id : undefined
+										).textarea.textarea.field = args.value ? args.value : null
+		+e('label')(for=args.id ? args.id : undefined).label.label
+			| !{args.placeholder}
+

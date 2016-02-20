@@ -1,9 +1,11 @@
 // Clear the float on any element.
 clearfix()
 	&:after
-		display table
+		display block
 		clear both
 		content ''
+
+
 
 // Fix no working `-webkit-text-size-adjust: 100%;` in Android.
 fix-text-size-adjust()
@@ -33,3 +35,10 @@ padding-x($padding)
 padding-y($padding)
 	padding-top $padding
 	padding-bottom $padding
+
+
+equal($value = 0)
+	top $value
+	right $value
+	bottom $value
+	left $value

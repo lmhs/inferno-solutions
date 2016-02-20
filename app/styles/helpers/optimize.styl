@@ -165,7 +165,8 @@ input[type='number']::-webkit-outer-spin-button
 // 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof).
 input[type='search']
 	-webkit-appearance textfield // 1
-	box-sizing content-box
+	box-sizing border-box
+	// box-sizing content-box
 
 // Remove inner padding and search cancel button in Safari 5 and Chrome on OS X.
 input[type='search']::-webkit-search-cancel-button
@@ -217,3 +218,12 @@ textarea
 table
 	border-collapse collapse
 	border-spacing 0
+
+
+html
+	box-sizing border-box
+
+*
+*:before
+*:after
+	box-sizing inherit

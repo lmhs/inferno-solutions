@@ -1,0 +1,49 @@
+.check-section
+	display inline-block
+	min-height 80px
+	padding 30px 30px 40px 30px
+	background-color #FFF
+	border 1px solid rgba(204, 204, 204, .3)
+	cursor pointer
+	position relative
+	margin 13px
+	text-decoration none
+	width 50%
+
+	&--is-small
+		padding 30px 30px 40px 30px
+		min-height 60px
+
+	&__caption
+		font-weight semibold
+		font-size 18px
+		color #333
+		// TODO whitney
+
+	&:hover
+		border-color #ccc
+
+	&__icon
+		visibility hidden
+		position absolute
+		top 29px
+		right 32px
+		.check-section--is-small &
+			right 22px
+
+	&--is-selected
+		border-width 2px
+		border-color orange
+		padding 29px 29px 39px 29px
+
+		&.check-section--is-small
+			padding 29px 29px 39px 29px
+
+		.check-section__icon
+			visibility visible
+		&:hover
+			border-color orange
+
+.check-icon
+	width 12px
+	height 9px
