@@ -1,2 +1,45 @@
 .nav
-	display block
+	display inline-block
+	vertical-align top
+	// &--tabs
+
+	&__list
+		font-size 0
+
+		&-item
+			font-size 16px
+			display inline-block
+			vertical-align top
+
+			& + &
+				&:before
+					content '/'
+					display inline-block
+					vertical-align top
+					color #666
+					padding-x 8px
+					line-height 56px
+					margin-top 4px
+
+			&__link
+				color #333
+				display inline-block
+				vertical-align top
+				&:hover
+					text-decoration none
+
+				&--tabs
+					&-top
+						padding-y 20px
+						border-top 4px solid orange0
+
+			&--is-active
+				.nav__list-item__link--tabs-top
+					border-top-color orange
+
+
+
+
+
+// .header__nav
+

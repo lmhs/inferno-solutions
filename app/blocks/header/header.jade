@@ -1,6 +1,14 @@
 include ../nav/nav
+include ../logo/logo
 
 mixin header()
 	+b.header&attributes(attributes)
+		+logo().header__logo
+		+nav({
+					name:'header',
+					type: 'tabs',
+					subtype: 'top',
+					items:getData('header-nav')
+					})
 
 

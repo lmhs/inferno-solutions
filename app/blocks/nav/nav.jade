@@ -1,3 +1,9 @@
-mixin nav()
-	+b.nav&attributes(attributes)
-		| nav
+mixin nav(args)
+	+b('nav').nav(class = args.name + '__nav' + ' nav--' + args.type + '-' + args.subtype)&attributes(attributes)
+		+e('ul').list
+			each item in args.items
+				+e('li').list-item(class = item.active ? 'nav__list-item--is-active' : '')
+					+e('a')(href = item.href, class = 'list-item__link--' + args.type + '-' + args.subtype).nav__list-item__link.link
+						| !{item.title}
+
+

@@ -1,0 +1,22 @@
+[
+	{
+		"title" : "Панель",
+		"href" : "/",
+		"active" : true
+	},
+	{
+		"title" : "Услуги",
+		"href" : "/",
+		"active" : false
+	},
+	{
+		"title" : "Бонусы и Скидки",
+		"href" : "/",
+		"active" : false
+	},
+	{
+		"title" : "Партнерка",
+		"href" : "/",
+		"active" : false
+	}
+]
