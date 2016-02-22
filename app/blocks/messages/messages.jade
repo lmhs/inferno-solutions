@@ -1,0 +1,11 @@
+mixin messages()
+	+b.messages&attributes(attributes)
+		+e('ul').list
+			+e('li').list-item
+				+e('a')(href=jv0).link
+					+icon('message').messages__icon
+					+e('span').counter 1
+			+e('li').list-item
+				+e('a')(href=jv0).link
+					+icon('message').messages__icon
+					+e('span').counter 2

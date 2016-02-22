@@ -1,5 +1,6 @@
 include ../nav/nav
 include ../logo/logo
+include ../messages/messages
 
 mixin header()
 	+b.header&attributes(attributes)
@@ -10,5 +11,6 @@ mixin header()
 					subtype: 'top',
 					items:getData('header-nav')
 					})
-
+		+e.user-menu
+			+messages.header__messages
 
