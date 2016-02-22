@@ -1,0 +1,29 @@
+.menu
+	display inline-block
+	vertical-align top
+	margin-right 20px
+
+	&__name-link
+		font-family openSans
+		font-size 14px
+		color #363636
+		font-weight bold
+		display inline-block
+		vertical-align top
+		padding 3px 7px
+		margin-top 20px
+		position relative
+		&:hover
+			text-decoration none
+
+		&:after
+			content ''
+			position absolute
+			right 0
+			bottom 0
+			width 0
+			height 0
+			border-style solid
+			border-width 0 0 5px 5px
+			border-color transparent transparent #363636 transparent
+

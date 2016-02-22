@@ -1,6 +1,7 @@
 include ../nav/nav
 include ../logo/logo
 include ../messages/messages
+include ../menu/menu
 
 mixin header()
 	+b.header&attributes(attributes)
@@ -13,4 +14,6 @@ mixin header()
 					})
 		+e.user-menu
 			+messages.header__messages
+			+menu.header__menu
+
 
