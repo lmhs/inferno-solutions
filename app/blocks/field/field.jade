@@ -37,6 +37,8 @@ mixin input(args)
 				+e().field-tooltip.field-tooltip
 					| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
 					a(href=jv0).field-tooltip__help Справка
+		if (args.type === 'search')
+			+e('span').field-triangle.field-triangle
 
 
 

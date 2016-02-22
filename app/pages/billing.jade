@@ -1,0 +1,10 @@
+include /blocks/center/center
+include /blocks/billing/billing
+
+extends /blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Billing';
+
+block content
+	+billing()

@@ -34,6 +34,9 @@
 			color #8B7B7F
 			visibility visible
 
+		& ~ .field-triangle
+			border-color transparent transparent rgba(51, 51, 51, 0.1) transparent
+
 	&--is-filled
 		& + .label
 			transform translate3d(-46px, -30px, 0) scale(.75)
@@ -52,6 +55,27 @@
 	&[disabled='true']
 		color #999
 		border-color #CCC
+
+.field-triangle
+	position absolute
+	left -21px
+	top 0
+	width 0
+	height 0
+	border-style solid
+	border-width 0 0 40px 21px
+	border-color transparent transparent #FFF transparent
+
+	&:after
+		content ''
+		top 39px
+		display block
+		position absolute
+		left -21px
+		width 21px
+		height 1px
+		background-color #231f20
+
 
 .field-icon
 	position absolute
@@ -139,3 +163,12 @@
 	-webkit-touch-callout none
 	pointer-events none
 	transition transform 0.3s
+
+.knowledge__field-wrap
+	width 300px
+
+.knowledge__input
+	padding-left 6px
+
+.knowledge__label
+	padding-left 6px

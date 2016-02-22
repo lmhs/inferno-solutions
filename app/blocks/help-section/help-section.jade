@@ -1,0 +1,7 @@
+include ../help/help
+include ../knowledge/knowledge
+
+mixin help-section()
+	+b.help-section&attributes(attributes)
+		+help()
+		+knowledge()

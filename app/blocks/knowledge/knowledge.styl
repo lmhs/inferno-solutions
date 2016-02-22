@@ -1,0 +1,40 @@
+.knowledge
+	display inline-block
+	vertical-align top
+	width 66.67%
+	font-size 16px
+	padding-left 15px
+	position relative
+
+	&__heading
+		font-size 18px
+
+	&__search-wrap
+		position absolute
+		top -10px
+		right 45px
+
+	&__list
+		&-item
+			padding-y 12px
+			position relative
+			& + &
+				padding-bottom 13px
+				&:after
+					content ''
+					position absolute
+					top 0
+					left 0
+					right 0
+					height 1px
+					width 100%
+					background-image linear-gradient(90deg, rgb(204,204,204) 0%, rgba(247,247,247,0) 100%)
+
+
+			&__link
+				color #333
+				&:hover
+					text-decoration none
+					color #231F20
+
+

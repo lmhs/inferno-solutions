@@ -1,0 +1,25 @@
+include ../field/field
+
+mixin knowledge()
+	+b.knowledge&attributes(attributes)
+		+e.head
+			+e('h3').heading База знаний
+			+e.search-wrap
+				+input({
+					type : 'search',
+					id : 'search',
+					placeholder : 'Поиск по базе данных'
+				})
+
+		+e.body
+			+e('ul').list
+				+e('li').list-item
+					+e('a')(href=jv0).list-item__link.link Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+				+e('li').list-item
+					+e('a')(href=jv0).list-item__link.link Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+				+e('li').list-item
+					+e('a')(href=jv0).list-item__link.link Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+				+e('li').list-item
+					+e('a')(href=jv0).list-item__link.link Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+				+e('li').list-item
+					+e('a')(href=jv0).list-item__link.link Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
